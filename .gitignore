@@ -1,1 +1,5 @@
 *.lock
+build/
+.packages/
+.dart_tool/
+.*
