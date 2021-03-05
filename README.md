@@ -1,16 +1,24 @@
-# pipemap
+# PipeMap
 
-A new Flutter project.
+## MVP
 
-## Getting Started
+The minimum viable product of PipeMap
 
-This project is a starting point for a Flutter application.
+### First iteration
 
-A few resources to get you started if this is your first Flutter project:
+#### Features
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+##### General features
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Visualize pipes in 2D
+* Visualize pipes in 3D
+* User requested documentation
+  * Dimensions of pipes
+  * Material of pipes
+  * Use of pipes
+
+##### Security features
+
+* User authentication for specific area
+* GWCL should authenticate requests from construction companies
+* No data available if not in the authorized area
