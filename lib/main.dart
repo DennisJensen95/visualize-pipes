@@ -1,59 +1,52 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
+import '2d_page.dart';
+import '3d_page.dart';
+import 'generic_styles.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: HomePage(),
+  ));
+}
 
-Color idColor = Color(0x4AB8BA);
-
-class MyApp extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var title = 'PipeMap';
     return MaterialApp(
-      title: 'Startup Name Generator',
-      home: RandomWords(),
-    );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  _RandomWordsState createState() => _RandomWordsState();
-}
-
-class _RandomWordsState extends State<RandomWords> {
-  final _suggestions = <WordPair>[];
-  final _biggerFont = TextStyle(fontSize: 18.0);
-
-  Widget _buildSuggestions() {
-    return ListView.builder(
-        padding: EdgeInsets.all(16.0),
-        itemBuilder: (context, i) {
-          if (i.isOdd) return Divider();
-
-          final index = i ~/ 2;
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10));
-          }
-          return _buildRow(_suggestions[index]);
-        });
-  }
-
-  Widget _buildRow(WordPair pair) {
-    return ListTile(
-      title: Text(
-        pair.asPascalCase,
-        style: _biggerFont,
+      title: title,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(title),
+        ),
+        body: Center(
+            child: new Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            new ElevatedButton(
+              style: GenericButtonStyle,
+              child: new Text('2D'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context) => new TwoDPage()),
+                );
+              },
+            ),
+            new ElevatedButton(
+              style: GenericButtonStyle,
+              child: new Text('3D'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  new MaterialPageRoute(builder: (context) => new ThreeDPage()),
+                );
+              },
+            )
+          ],
+        )),
       ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Startup Name Generator'),
-      ),
-      body: _buildSuggestions(),
     );
   }
 }
