@@ -21,10 +21,12 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  flutter_map: any # or the latest version on Pub
   flutter:
     sdk: flutter
   toggle_switch: "^0.1.8"
   english_words: ^3.1.5
+  geolocator: "^7.0.1"
 
 
   # The following adds the Cupertino Icons font to your application.
