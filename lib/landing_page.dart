@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '2d_page.dart';
+import '2d_page/2d_page.dart';
 import '3d_page.dart';
 import 'generic_styles.dart';
 
@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(title),
+          backgroundColor: idColor,
         ),
         body: Center(
             child: new Row(

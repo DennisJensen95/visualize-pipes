@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '2d_page/2d_page.dart';
-import '3d_page.dart';
-=======
->>>>>>> cfd7524 (Implemented the barebone login and 3d pages.)
 import 'generic_styles.dart';
 import 'landing_page.dart';
 
