@@ -30,8 +30,7 @@ class TwoDPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    new MaterialPageRoute(
-                        builder: (context) => new ThreeDPage()),
+                    new MaterialPageRoute(builder: (context) => new ARCore()),
                   );
                 },
                 child: new Text('3D'),

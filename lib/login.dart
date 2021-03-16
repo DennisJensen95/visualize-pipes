@@ -1,18 +1,9 @@
-import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '2d_page/2d_page.dart';
-import '3d_page.dart';
-=======
->>>>>>> cfd7524 (Implemented the barebone login and 3d pages.)
-import 'generic_styles.dart';
+import 'dart:html';
 import 'landing_page.dart';
-
-void main() {
-  runApp(MaterialApp(
-    title: 'Navigation Basics',
-    home: LoginPage(),
-  ));
-}
+import 'package:flutter/material.dart';
+import 'package:pipemap/landing_page.dart';
+import 'generic_styles.dart';
+import 'main.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -76,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.white,
+          color: Colors.teal[200],
           child: Padding(
             padding: const EdgeInsets.all(36.0),
             child: Column(
@@ -86,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 155.0,
                   child: Image.asset(
-                    "lib/assets/images/pipelogo.png",
+                    "assets/pipelogo.png",
                     fit: BoxFit.contain,
                   ),
                 ),
