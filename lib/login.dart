@@ -3,7 +3,6 @@ import 'landing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:pipemap/landing_page.dart';
 import 'generic_styles.dart';
-import 'main.dart';
 
 class Login extends StatelessWidget {
   @override

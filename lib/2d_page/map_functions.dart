@@ -14,7 +14,7 @@ FlutterMap getMap(
     ),
     layers: [
       TileLayerOptions(
-          urlTemplate: "http://a.tile.stamen.com/toner/{z}/{x}/{y}.png",
+          urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
           subdomains: ['a', 'b', 'c']),
       MarkerLayerOptions(
         markers: [
