@@ -2,15 +2,32 @@ import 'package:flutter/material.dart';
 import '../3d_page.dart';
 import '../generic_styles.dart';
 import './map_functions.dart';
-import '../geo_location.dart' as geo;
 import 'package:flutter_map/flutter_map.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:latlong/latlong.dart' as latLng;
+import 'package:latlong/latlong.dart';
 
-latLng.LatLng center = latLng.LatLng(55.676098, 12.568337);
+LatLng center = LatLng(55.676098, 12.568337);
 MapController mapController = MapController();
 
-class TwoDPage extends StatelessWidget {
+class TwoDPage extends StatefulWidget {
+  @override
+  _TwoDPage createState() => _TwoDPage();
+}
+
+class _TwoDPage extends State<TwoDPage> {
+  Widget futureWidget() {
+    return new FutureBuilder(
+      future: getPipes(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return getMap(mapController, 10, center, snapshot.data);
+        } else if (snapshot.hasError) {
+          return new Text("${snapshot.error}");
+        }
+        return new CircularProgressIndicator();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +36,7 @@ class TwoDPage extends StatelessWidget {
           title: Text("2D page"),
           backgroundColor: idColor,
         ),
-        body: getMap(mapController, 15, center),
+        body: futureWidget(),
         floatingActionButton: Stack(
           children: <Widget>[
             Align(
@@ -42,10 +59,10 @@ class TwoDPage extends StatelessWidget {
                 child: FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () async {
-                    Position position = await geo.determinePosition();
-                    center.latitude = position.latitude;
-                    center.longitude = position.longitude;
-                    mapController.move(center, 18.45);
+                    // Position position = await geo.determinePosition();
+                    center.latitude = 5.659764442286405;
+                    center.longitude = -0.01485431751483095;
+                    mapController.move(center, 15);
                   },
                   child: const Icon(Icons.account_tree_rounded),
                   backgroundColor: idColor,
