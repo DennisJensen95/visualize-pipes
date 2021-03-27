@@ -4,9 +4,11 @@ import '../generic_styles.dart';
 import './map_functions.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
+import './info_window.dart';
 
 LatLng center = LatLng(55.676098, 12.568337);
 MapController mapController = MapController();
+InfoWindowController infoWindowController = InfoWindowController();
 
 class TwoDPage extends StatefulWidget {
   @override
@@ -14,12 +16,14 @@ class TwoDPage extends StatefulWidget {
 }
 
 class _TwoDPage extends State<TwoDPage> {
+  var infoWindow = InfoWindow(controller: infoWindowController);
   Widget futureWidget() {
     return new FutureBuilder(
       future: getPipes(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return getMap(mapController, 10, center, snapshot.data);
+          return getMap(
+              mapController, 10, center, snapshot.data, infoWindowController);
         } else if (snapshot.hasError) {
           return new Text("${snapshot.error}");
         }
@@ -67,6 +71,7 @@ class _TwoDPage extends State<TwoDPage> {
                   child: const Icon(Icons.account_tree_rounded),
                   backgroundColor: idColor,
                 )),
+            Align(alignment: Alignment.bottomLeft, child: infoWindow),
           ],
         ));
   }

@@ -28,6 +28,8 @@ dependencies:
   english_words: ^3.1.5
   geolocator: "7.0.1"
   arcore_flutter_plugin: ^0.010
+  flutter_map_tappable_polyline: any
+  # custom_info_window: any
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
