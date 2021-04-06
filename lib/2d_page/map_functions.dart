@@ -14,7 +14,7 @@ FlutterMap getMap(MapController mapController, double zoom, LatLng center,
     mapController: mapController,
     options: MapOptions(
       minZoom: 10,
-      maxZoom: 20,
+      maxZoom: 18.0,
       zoom: zoom,
       center: center,
       plugins: [
@@ -68,11 +68,11 @@ dynamic getPipeData(String inputTag) {
 
 Future<List<TaggedPolyline>> getPipes() async {
   final String response =
-      await rootBundle.loadString('lib/assets/data/test.json');
+      await rootBundle.loadString('lib/assets/data/skyttegade.json');
   final data = await json.decode(response);
   dataGlobal = data;
   List<TaggedPolyline> pipesData = [];
-  for (int i = 0; i < data["features"].length - 1; i++) {
+  for (int i = 0; i < data["features"].length; i++) {
     List<LatLng> onePipeData = [];
     var add = false;
     var tag = data["features"][i]["properties"]["OBJECTID"].toString();
