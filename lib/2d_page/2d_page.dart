@@ -63,8 +63,11 @@ class _TwoDPage extends State<TwoDPage> {
                   heroTag: "btn2",
                   onPressed: () async {
                     // Position position = await geo.determinePosition();
-                    center.latitude = 55.687114;
+                    center.latitude = 55.68711;
                     center.longitude = 12.548907;
+                    // center.latitude = 5.659764442286405;
+                    // center.longitude = -0.01485431751483095;
+
                     mapController.move(center, 15);
                   },
                   child: const Icon(Icons.account_tree_rounded),

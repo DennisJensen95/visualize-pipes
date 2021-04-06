@@ -115,6 +115,43 @@
                 "T_NODE": 0,
                 "REMARKS": ""
             }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        12.548853,
+                        55.687104
+                    ],
+                    [
+                        12.548885,
+                        55.687096
+                    ],
+                    [
+                        12.548907,
+                        55.687114
+                    ]
+                ]
+            },
+            "properties": {
+                "OBJECTID": 4,
+                "PIPE_ID": "",
+                "MATERIAL": "AC",
+                "YEAR_INSTA": 0,
+                "DN": 100,
+                "THICKNESS": 0,
+                "OPS_TYPE": "Distribution",
+                "SVC_STATE": "In use",
+                "PRESS_CLAS": 0,
+                "DISTRICT": "Nørrebro",
+                "REGION": "København",
+                "DATE_REG": "2021-11-30T00:00:00.000Z",
+                "F_NODE": 0,
+                "T_NODE": 0,
+                "REMARKS": ""
+            }
         }
     ]
 }

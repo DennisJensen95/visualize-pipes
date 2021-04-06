@@ -77,7 +77,7 @@ Future<List<TaggedPolyline>> getPipes() async {
     var add = false;
     var tag = data["features"][i]["properties"]["OBJECTID"].toString();
     for (int j = 0;
-        j < data["features"][i]["geometry"]["coordinates"].length;
+        j < data["features"][i]["geometry"]["coordinates"].length - 1;
         j++) {
       if (data["features"][i]["geometry"]["coordinates"][j].length == 2) {
         LatLng point = LatLng(
