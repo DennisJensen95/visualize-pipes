@@ -38,7 +38,7 @@ class _InfoWindowState extends State<InfoWindow> {
           objectId = jsonInformation["OBJECTID"].toString(),
           pipeMaterial = jsonInformation["MATERIAL"],
           district = jsonInformation["DISTRICT"],
-          pipeRegistered = jsonInformation["DATA_REG"],
+          pipeRegistered = jsonInformation["DATE_REG"].substring(0, 10),
           diameter = jsonInformation["DN"].toString(),
           pressure = jsonInformation["PRESS_CLAS"].toString(),
           svcState = jsonInformation["SVC_STATE"],
@@ -51,18 +51,18 @@ class _InfoWindowState extends State<InfoWindow> {
     return Opacity(
         opacity: 0.7,
         child: Container(
-            margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-            height: MediaQuery.of(context).size.height / 4,
-            width: MediaQuery.of(context).size.width / 4,
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey), color: Colors.grey),
-            child: RichText(
-              text: TextSpan(
-                text:
-                    '''Pipe object id: ${objectId}\nPipe Material: ${pipeMaterial}\nDistrict: ${district}\nData registrered: ${pipeRegistered}\nDiameter: ${diameter}\nRegion: ${region}\nSVC State: ${svcState}\nPressure class: ${pressure}
+          margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+          height: MediaQuery.of(context).size.height / 4,
+          width: MediaQuery.of(context).size.width / 4,
+          decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey), color: Colors.grey),
+          child: FittedBox(
+            fit: BoxFit.contain,
+            child: Text(
+                '''Pipe object id: ${objectId}\nPipe Material: ${pipeMaterial}\nDistrict: ${district}\nInstallation date: ${pipeRegistered}\nDiameter: ${diameter}\nRegion: ${region}\nSVC State: ${svcState}\nPressure class: ${pressure}
                                     ''',
-                style: TextStyle(color: Colors.white, fontSize: 18.0),
-              ),
-            )));
+                style: TextStyle(color: Colors.black)),
+          ),
+        ));
   }
 }
