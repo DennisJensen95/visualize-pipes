@@ -44,8 +44,7 @@ class _TwoDPage extends State<TwoDPage> {
         floatingActionButton: Stack(
           children: <Widget>[
             Align(
-              alignment: Alignment(
-                  Alignment.topCenter.x + 0.03, Alignment.topCenter.y + 0.2),
+              alignment: Alignment.bottomCenter,
               child: FloatingActionButton(
                 heroTag: "btn1",
                 onPressed: () {
