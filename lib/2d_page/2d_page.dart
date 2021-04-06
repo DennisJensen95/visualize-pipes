@@ -6,7 +6,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import './info_window.dart';
 
-LatLng center = LatLng(55.676098, 12.568337);
+LatLng center = LatLng(55.687114, 12.548907);
 MapController mapController = MapController();
 InfoWindowController infoWindowController = InfoWindowController();
 
@@ -63,8 +63,8 @@ class _TwoDPage extends State<TwoDPage> {
                   heroTag: "btn2",
                   onPressed: () async {
                     // Position position = await geo.determinePosition();
-                    center.latitude = 5.659764442286405;
-                    center.longitude = -0.01485431751483095;
+                    center.latitude = 55.687114;
+                    center.longitude = 12.548907;
                     mapController.move(center, 15);
                   },
                   child: const Icon(Icons.account_tree_rounded),
