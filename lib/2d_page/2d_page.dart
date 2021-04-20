@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../3d_page.dart';
+import '../3d_page/3d_page.dart';
 import '../generic_styles.dart';
 import './map_functions.dart';
 import 'package:flutter_map/flutter_map.dart';
