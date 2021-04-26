@@ -7,24 +7,20 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        12.548843,
-                        55.686918
+                        12.512700302690796,
+                        55.78193431265762
                     ],
                     [
-                        12.548937,
-                        55.686997
+                        12.512825663137923,
+                        55.781912355693414
                     ],
                     [
-                        12.549112,
-                        55.687154
+                        12.513058481541027,
+                        55.781872432381846
                     ],
                     [
-                        12.549345,
-                        55.687373
-                    ],
-                    [
-                        12.549098,
-                        55.687452
+                        12.513075260364653,
+                        55.781911000941385
                     ]
                 ]
             },
@@ -38,9 +34,9 @@
                 "OPS_TYPE": "Distribution",
                 "SVC_STATE": "In use",
                 "PRESS_CLAS": 0,
-                "DISTRICT": "Nørrebro",
-                "REGION": "København",
-                "DATE_REG": "2021-4-27T00:00:00.000Z",
+                "DISTRICT": "DTU Skylab",
+                "REGION": "Lyngby",
+                "DATE_REG": "2020-11-30T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""
@@ -52,12 +48,16 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        12.549112,
-                        55.687154
+                        12.512919021694417,
+                        55.781894786440205
                     ],
                     [
-                        12.549005280724296,
-                        55.68719448484887
+                        12.512919021694417,
+                        55.781894786440205
+                    ],
+                    [
+                        12.512990147016124,
+                        55.78203627900017
                     ]
                 ]
             },
@@ -71,9 +71,9 @@
                 "OPS_TYPE": "Distribution",
                 "SVC_STATE": "In use",
                 "PRESS_CLAS": 0,
-                "DISTRICT": "Nørrebro",
-                "REGION": "København",
-                "DATE_REG": "2020-11-30T00:00:00.000Z",
+                "DISTRICT": "DTU Skylab",
+                "REGION": "Lyngby",
+                "DATE_REG": "2021-5-18T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""
@@ -85,12 +85,12 @@
                 "type": "LineString",
                 "coordinates": [
                     [
-                        12.549112,
-                        55.687154
+                        12.512919021694417,
+                        55.781894786440205
                     ],
                     [
-                        12.549005280724296,
-                        55.68719448484887
+                        12.512919021694417,
+                        55.781894786440205
                     ]
                 ]
             },
@@ -104,9 +104,9 @@
                 "OPS_TYPE": "Distribution",
                 "SVC_STATE": "In use",
                 "PRESS_CLAS": 0,
-                "DISTRICT": "Nørrebro",
-                "REGION": "København",
-                "DATE_REG": "2020-11-30T00:00:00.000Z",
+                "DISTRICT": "DTU Skylab",
+                "REGION": "Lyngby",
+                "DATE_REG": "2021-5-18T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""

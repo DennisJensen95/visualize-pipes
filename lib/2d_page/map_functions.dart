@@ -7,7 +7,7 @@ import 'package:flutter_map_tappable_polyline/flutter_map_tappable_polyline.dart
 import './info_window.dart';
 
 var dataGlobal;
-
+const _markerSize = 40.0;
 FlutterMap getMap(MapController mapController, double zoom, LatLng center,
     pipes, InfoWindowController infoWindow) {
   return FlutterMap(
@@ -33,6 +33,16 @@ FlutterMap getMap(MapController mapController, double zoom, LatLng center,
           onMiss: () {
             print('No polyline was tapped');
           }),
+      MarkerLayerOptions(
+        markers: [
+          Marker(
+            width: _markerSize,
+            height: _markerSize,
+            point: center,
+            builder: (_) => Icon(Icons.location_on, size: _markerSize),
+          ),
+        ],
+      ),
     ],
   );
 }
