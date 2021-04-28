@@ -7,6 +7,84 @@
                 "type": "LineString",
                 "coordinates": [
                     [
+                        12.450590,
+                        55.737267
+                    ],
+                    [
+                        12.450546,
+                        55.737342
+                    ],
+                    [
+                        12.450514,
+                        55.737399
+                    ],
+                    [
+                        12.450469,
+                        55.737477
+                    ],
+                    [
+                        12.450344644865604,
+                        55.737462017332504
+                    ]
+                ]
+            },
+            "properties": {
+                "OBJECTID": 1,
+                "PIPE_ID": "",
+                "MATERIAL": "Steel",
+                "YEAR_INSTA": 0,
+                "DN": 150,
+                "THICKNESS": 0,
+                "OPS_TYPE": "Distribution",
+                "SVC_STATE": "In use",
+                "PRESS_CLAS": 0,
+                "DISTRICT": "Herlev",
+                "REGION": "København",
+                "DATE_REG": "2021-04-27T00:00:00.000Z",
+                "F_NODE": 0,
+                "T_NODE": 0,
+                "REMARKS": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        12.450514,
+                        55.737399
+                    ],
+                    [
+                        12.450409354749523,
+                        55.73738223494803
+                    ]
+                ]
+            },
+            "properties": {
+                "OBJECTID": 2,
+                "PIPE_ID": "",
+                "MATERIAL": "Plastic",
+                "YEAR_INSTA": 0,
+                "DN": 150,
+                "THICKNESS": 0,
+                "OPS_TYPE": "Distribution",
+                "SVC_STATE": "In use",
+                "PRESS_CLAS": 0,
+                "DISTRICT": "Herlev",
+                "REGION": "København",
+                "DATE_REG": "2020-11-30T00:00:00.000Z",
+                "F_NODE": 0,
+                "T_NODE": 0,
+                "REMARKS": ""
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
                         12.548843,
                         55.686918
                     ],
@@ -40,7 +118,7 @@
                 "PRESS_CLAS": 0,
                 "DISTRICT": "Nørrebro",
                 "REGION": "København",
-                "DATE_REG": "2021-4-27T00:00:00.000Z",
+                "DATE_REG": "2021-04-27T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""
@@ -184,7 +262,7 @@
                 "PRESS_CLAS": 0,
                 "DISTRICT": "DTU Skylab",
                 "REGION": "Lyngby",
-                "DATE_REG": "2021-5-18T00:00:00.000Z",
+                "DATE_REG": "2021-05-18T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""
@@ -217,7 +295,7 @@
                 "PRESS_CLAS": 0,
                 "DISTRICT": "DTU Skylab",
                 "REGION": "Lyngby",
-                "DATE_REG": "2021-5-18T00:00:00.000Z",
+                "DATE_REG": "2021-05-18T00:00:00.000Z",
                 "F_NODE": 0,
                 "T_NODE": 0,
                 "REMARKS": ""
