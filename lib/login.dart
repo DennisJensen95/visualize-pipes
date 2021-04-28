@@ -1,7 +1,6 @@
 import 'dart:html';
-import 'landing_page.dart';
+import '2d_page/2d_page.dart';
 import 'package:flutter/material.dart';
-import 'package:pipemap/landing_page.dart';
 import 'generic_styles.dart';
 
 class Login extends StatelessWidget {
@@ -50,13 +49,13 @@ class _LoginPageState extends State<LoginPage> {
     final loginButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.teal[200],
+      color: idColor,
       child: ElevatedButton(
         style: genericButtonStyle,
         onPressed: () {
           Navigator.push(
             context,
-            new MaterialPageRoute(builder: (context) => new HomePage()),
+            new MaterialPageRoute(builder: (context) => new TwoDPage()),
           );
         },
         child: Text('Log in'),
@@ -66,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
         child: Container(
-          color: Colors.teal[200],
+          color: idColor,
           child: Padding(
             padding: const EdgeInsets.all(36.0),
             child: Column(

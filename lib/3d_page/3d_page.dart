@@ -22,6 +22,7 @@ class ARCore extends StatefulWidget {
 class _ARCoreState extends State<ARCore> {
   var compassDirection;
   var gpsPosition;
+  int _selectedIndex = 1;
 
   ArCoreController arCoreController;
   double angleFromCoordinate(
@@ -71,7 +72,7 @@ class _ARCoreState extends State<ARCore> {
         rotation: vector.Vector4(0.7071068, 0, 0, 0.7071068));
     var mainNode = ArCoreNode(
         shape: cylinder,
-        position: vector.Vector3(0, -2, -10),
+        position: vector.Vector3(0, -5, -10),
         rotation: vector.Vector4(0.5, 0.5, 0.5, 0.5),
         children: [node_2, node_3]);
 
@@ -84,69 +85,63 @@ class _ARCoreState extends State<ARCore> {
     super.dispose();
   }
 
+  void _onItemTapped(int index) {
+    if (_selectedIndex == index) {
+      return;
+    }
+    setState(() {
+      _selectedIndex = index;
+    });
+    if (_selectedIndex == 0) {
+      Navigator.push(
+        context,
+        new MaterialPageRoute(builder: (context) => new TwoDPage()),
+      );
+    } else {
+      Navigator.push(
+        context,
+        new MaterialPageRoute(builder: (context) => new ARCore()),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Image.asset(
+              "lib/assets/images/small_pipe_logo.png",
+            ),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           centerTitle: true,
-          title: Text("3D"),
+          title: Text("PipeData",
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
           backgroundColor: idColor,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: idColor,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: '2D',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: '3D',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
         ),
         body: ArCoreView(
           onArCoreViewCreated: _onArCoreViewCreated,
         ),
         floatingActionButton: Stack(
-          children: <Widget>[
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: FloatingActionButton(
-                heroTag: "btn1",
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    new MaterialPageRoute(builder: (context) => new TwoDPage()),
-                  );
-                },
-                child: new Text('2D'),
-                backgroundColor: idColor,
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                heroTag: "btn2",
-                onPressed: () async {
-                  var tmp = await FlutterCompass.events.first;
-                  var tmpPosition = await determinePosition();
-                  setState(() {
-                    compassDirection = tmp;
-                    gpsPosition = tmpPosition;
-                  });
-                },
-                child: new Text('Compass'),
-                backgroundColor: idColor,
-              ),
-            ),
-            Align(
-                alignment: Alignment.bottomLeft,
-                child: Opacity(
-                    opacity: 0.7,
-                    child: Container(
-                      margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-                      height: MediaQuery.of(context).size.height / 4,
-                      width: MediaQuery.of(context).size.width / 4,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
-                          color: Colors.grey),
-                      child: FittedBox(
-                        fit: BoxFit.contain,
-                        child: Text(
-                            '''compassDirection $compassDirection\nGPS position: $gpsPosition
-                                    ''',
-                            style: TextStyle(color: Colors.black)),
-                      ),
-                    )))
-          ],
+          children: <Widget>[],
         ));
   }
 }

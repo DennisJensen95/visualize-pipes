@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pipemap/2d_page/2d_page.dart';
 import 'generic_styles.dart';
-import 'landing_page.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -55,13 +55,13 @@ class _LoginPageState extends State<LoginPage> {
     final loginButon = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Colors.teal[200],
+      color: idColor,
       child: ElevatedButton(
         style: genericButtonStyle,
         onPressed: () {
           Navigator.push(
             context,
-            new MaterialPageRoute(builder: (context) => new HomePage()),
+            new MaterialPageRoute(builder: (context) => new TwoDPage()),
           );
         },
         child: Text('Log in'),
