@@ -6,7 +6,8 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import './info_window.dart';
 
-LatLng center = LatLng(55.687114, 12.548907);
+// LatLng center = LatLng(55.78193411330404, 12.512833196691487); // DTU Skylab
+LatLng center = LatLng(55.687054966630846, 12.548926815486908); // Skyttegade
 MapController mapController = MapController();
 InfoWindowController infoWindowController = InfoWindowController();
 
@@ -62,9 +63,10 @@ class _TwoDPage extends State<TwoDPage> {
                 child: FloatingActionButton(
                   heroTag: "btn2",
                   onPressed: () async {
-                    // Position position = await geo.determinePosition();
-                    center.latitude = 55.687114;
-                    center.longitude = 12.548907;
+                    // center.latitude = 55.78195485276012; // DTU Skylab
+                    // center.longitude = 12.512840572766047; // DTU Skylab
+                    center.latitude = 55.687054966630846; // Skyttegade
+                    center.longitude = 12.548926815486908; // Skyttegade
                     mapController.move(center, 15);
                   },
                   child: const Icon(Icons.account_tree_rounded),

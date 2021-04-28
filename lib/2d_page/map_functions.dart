@@ -7,7 +7,7 @@ import 'package:flutter_map_tappable_polyline/flutter_map_tappable_polyline.dart
 import './info_window.dart';
 
 var dataGlobal;
-
+const _markerSize = 40.0;
 FlutterMap getMap(MapController mapController, double zoom, LatLng center,
     pipes, InfoWindowController infoWindow) {
   return FlutterMap(
@@ -33,6 +33,16 @@ FlutterMap getMap(MapController mapController, double zoom, LatLng center,
           onMiss: () {
             print('No polyline was tapped');
           }),
+      MarkerLayerOptions(
+        markers: [
+          Marker(
+            width: _markerSize,
+            height: _markerSize,
+            point: center,
+            builder: (_) => Icon(Icons.location_on, size: _markerSize),
+          ),
+        ],
+      ),
     ],
   );
 }
@@ -68,11 +78,11 @@ dynamic getPipeData(String inputTag) {
 
 Future<List<TaggedPolyline>> getPipes() async {
   final String response =
-      await rootBundle.loadString('lib/assets/data/skyttegade.json');
+      await rootBundle.loadString('lib/assets/data/fake_data.json');
   final data = await json.decode(response);
   dataGlobal = data;
   List<TaggedPolyline> pipesData = [];
-  for (int i = 0; i < data["features"].length; i++) {
+  for (int i = 0; i < data["features"].length - 1; i++) {
     List<LatLng> onePipeData = [];
     var add = false;
     var tag = data["features"][i]["properties"]["OBJECTID"].toString();

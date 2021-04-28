@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color idColor = Colors.teal[200];
+Color idColor = Color(0xff00adb4);
 var genericButtonStyle = ElevatedButton.styleFrom(
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(18.0),
